@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+#main{
+    text-align: center; 
+}
+#body {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margin-top: 50px;
+    margin-bottom: 130px;
+}
+#images {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto; 
+    width: 500px;
+    height: 500px;
+}
+
+.image_list {
+    list-style: none;
+    margin-bottom:5px ;
+    display: flex; 
+    border-radius: 10px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image_list > img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px; 
+
+}
+
+.image_list > p {
+    text-align: center;
+    padding-top: 20px;
+    width: 100%;
+    margin: 0;
+    margin-left: 4px;
+    border-radius: 0 10px 10px 0; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#image_view {
+    width: 500px;
+    height: 500px;
+    margin-left: 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+#image_focus {
+    text-align: center;
+    height: 100%;
+}
+
+#image_view img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    border-radius: 10px;
+}
+
+#image_view textarea {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    resize:both;
+    overflow: auto;
+    border: none; 
+    outline: none; 
+    text-align: center;
+}
+
+.selected-image {
+    list-style: none;
+    margin-bottom:5px ;
+    display: flex; 
+    border-radius: 10px;
+    background-color: rgb(13, 157, 182);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+}
+.selected-image > img {
+    width: 100px; 
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px; 
+}
+
+.selected-image > p {
+    text-align: center;
+    padding-top: 20px;
+    width: 100%;
+    margin: 0;
+    margin-left: 4px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 0 10px 10px 0; 
+}
