@@ -32,6 +32,26 @@ const update_image=(href,desc) =>{
     document.getElementById('image_view').append(div_container);
     
 }
+function checkAndUpdate(random='up'){
+    let elem=document.getElementsByClassName('selected-image')[0];
+    let targetImageList;
+    if(random=='down')
+        targetImageList=elem.nextElementSibling;
+    else
+        targetImageList=elem.previousElementSibling;
+        
+    if(targetImageList==null)
+    return;
+    elem.className='image_list';
+    targetImageList.className='selected-image';
+    let img = targetImageList.closest('.selected-image').querySelector('img');
+    let para= targetImageList.closest('.selected-image').querySelector('p');
+    let imageView = document.getElementById('image_view');
+    let last_img=imageView.querySelector('img');
+    last_img.setAttribute('src',img.getAttribute('src'));
+    let last_para=imageView.querySelector('textarea');
+    last_para.value = para.innerText
+}
 function getGreeting() {
     const currentTime = new Date().getHours();
 
@@ -65,6 +85,15 @@ class Menu {
         this.elem = elem;
         elem.onclick = this.onclick.bind(this);
         elem.oninput = this.oninput.bind(this);
+        elem.onkeydown = this.onkeydown.bind(this);
+    }
+    onkeydown(event){
+        if(event.key=='ArrowDown'){
+            checkAndUpdate('down');
+        }
+        if(event.key=='ArrowUp'){
+            checkAndUpdate();
+        }
     }
     oninput(event){
         let tar = event.target;
@@ -92,4 +121,7 @@ class Menu {
     }
 }
 
-new Menu(main);
+
+
+let elem=document.querySelector('body');
+new Menu(elem);
